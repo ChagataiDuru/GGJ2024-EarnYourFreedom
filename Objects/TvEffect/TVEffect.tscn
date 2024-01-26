@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfj5x7xvlaiyi"]
+
+[ext_resource type="Texture2D" uid="uid://drf17l7f1lpil" path="res://Objects/TvEffect/TV_effect2.png" id="1_onngr"]
+[ext_resource type="Texture2D" uid="uid://dks6u8ti73rnf" path="res://Objects/TvEffect/ShadowFigure.png" id="2_bc751"]
+
+[node name="TvEffect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TvEffect2" type="Sprite2D" parent="."]
+position = Vector2(576, 323.75)
+scale = Vector2(36, 36.0278)
+texture = ExtResource("1_onngr")
+
+[node name="ShadowFigure" type="Sprite2D" parent="."]
+position = Vector2(352, 512)
+scale = Vector2(8.875, 9.63889)
+texture = ExtResource("2_bc751")
+
+[node name="ShadowFigure2" type="Sprite2D" parent="."]
+position = Vector2(848, 512)
+scale = Vector2(9.375, 9.00694)
+texture = ExtResource("2_bc751")
+
+[node name="ShadowFigure3" type="Sprite2D" parent="."]
+position = Vector2(1040, 504)
+scale = Vector2(11.4375, 11.8194)
+texture = ExtResource("2_bc751")
+
+[node name="ShadowFigure4" type="Sprite2D" parent="."]
+position = Vector2(640, 568)
+scale = Vector2(9.875, 9.13889)
+texture = ExtResource("2_bc751")
+
+[node name="ShadowFigure5" type="Sprite2D" parent="."]
+position = Vector2(128, 464)
+scale = Vector2(7.4375, 7.88194)
+texture = ExtResource("2_bc751")
