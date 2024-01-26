@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://r04euhhgfaa4"]
+
+[ext_resource type="Texture2D" uid="uid://cgqgmjbocqrny" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/bush.png" id="1_4xx6e"]
+
+[node name="SpawnPoint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4xx6e")
