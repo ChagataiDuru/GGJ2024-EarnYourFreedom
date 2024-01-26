@@ -1,11 +1,10 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var main_character = $MainCharacter
+	print("ch: ",main_character)
+	var target_position = self.position
+	print(target_position)
+	main_character.position = target_position
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -994,8 +994,8 @@ speed = 100.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
-animation = &"idle"
-frame = 4
+animation = &"walk"
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
