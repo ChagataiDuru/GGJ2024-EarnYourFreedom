@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc3a2tfvjg12c"]
+
+[ext_resource type="Script" path="res://ExternalSources/BreakableThings/sfx/SFXTiles.gd" id="1_4bj7d"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_4bj7d")
+
+[connection signal="finished" from="." to="." method="_on_sfx_finished"]
