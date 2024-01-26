@@ -991,24 +991,25 @@ collision_layer = 2
 script = ExtResource("1_c8r2f")
 speed = 100.0
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
-animation = &"walk"
+animation = &"idle"
+frame = 4
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_dnlp5")
 
-[node name="Camera2D2" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_y53kg")
 }
 
-[node name="AnimationTree2" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_y53kg")
 }
@@ -1016,27 +1017,34 @@ tree_root = SubResource("AnimationNodeStateMachine_6fd0j")
 anim_player = NodePath("../AnimationPlayer")
 parameters/HorizontalMovement/blend_position = -0.698444
 
-[node name="StateMachine2" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state", "character", "animation_tree")]
 script = ExtResource("101_eklq3")
+current_state = NodePath("Ground")
+character = NodePath("..")
+animation_tree = NodePath("../AnimationTree")
 
-[node name="Ground" type="Node" parent="StateMachine2"]
+[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("air_state")]
 script = ExtResource("102_aejb8")
+air_state = NodePath("../Air")
 
-[node name="Air" type="Node" parent="StateMachine2"]
+[node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("landing_state")]
 script = ExtResource("103_6nfgj")
+landing_state = NodePath("../Landing")
 
-[node name="Landing" type="Node" parent="StateMachine2"]
+[node name="Landing" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("104_cj4nn")
+ground_state = NodePath("../Ground")
 
-[node name="DebugLabel2" type="Label" parent="."]
+[node name="DebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
 offset_left = -43.3333
 offset_top = -39.6667
 offset_right = 43.6667
 offset_bottom = -16.6667
 text = "State: "
 script = ExtResource("105_72nad")
+state_machine = NodePath("../StateMachine")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="on_transition" from="StateMachine2/Ground" to="StateMachine2" method="_on_transition"]
-[connection signal="on_transition" from="StateMachine2/Air" to="StateMachine2" method="_on_transition"]
-[connection signal="on_transition" from="StateMachine2/Landing" to="StateMachine2" method="_on_transition"]
+[connection signal="on_transition" from="StateMachine/Ground" to="StateMachine" method="_on_transition"]
+[connection signal="on_transition" from="StateMachine/Air" to="StateMachine" method="_on_transition"]
+[connection signal="on_transition" from="StateMachine/Landing" to="StateMachine" method="_on_transition"]
