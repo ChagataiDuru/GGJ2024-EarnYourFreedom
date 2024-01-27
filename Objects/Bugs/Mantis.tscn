@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dafu1kojxetbm"]
+
+[ext_resource type="Texture2D" uid="uid://coxc8k3h3rbgm" path="res://ExternalSources/Animated insect enemy assets/Mantis.png" id="1_f2lw7"]
+[ext_resource type="Script" path="res://Objects/Bugs/Mantis.gd" id="1_vfupa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2634q"]
+atlas = ExtResource("1_f2lw7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnbx"]
+atlas = ExtResource("1_f2lw7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufypt"]
+atlas = ExtResource("1_f2lw7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvqe2"]
+atlas = ExtResource("1_f2lw7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8vgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2634q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufypt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvqe2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_va51r"]
+radius = 7.0
+
+[node name="Mantis" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_vfupa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b8vgh")
+animation = &"idle"
+frame_progress = 0.799055
+speed_scale = 0.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_va51r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

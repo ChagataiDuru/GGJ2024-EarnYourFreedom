@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkfqvw7u2g8ok"]
+[gd_scene load_steps=9 format=3 uid="uid://bkfqvw7u2g8ok"]
 
 [ext_resource type="Texture2D" uid="uid://bkt53sx7g2x4f" path="res://ExternalSources/BreakableThings/world.png" id="1_yflbj"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="2_xpws5"]
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="3_76mw4"]
 [ext_resource type="PackedScene" uid="uid://dleuw1pjoj3s1" path="res://Objects/Box/Box.tscn" id="4_kl62d"]
 [ext_resource type="PackedScene" uid="uid://ddmj6qro7nr68" path="res://Objects/Spike/Spike.tscn" id="5_66gf0"]
+[ext_resource type="PackedScene" uid="uid://bfn34hylc8g2j" path="res://Objects/Bugs/BugSpawner.tscn" id="6_hhh6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yxk"]
 texture = ExtResource("1_yflbj")
@@ -267,7 +268,7 @@ sources/1 = SubResource("TileSetAtlasSource_p1yxk")
 [node name="BallonTest" type="Node2D"]
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_76mw4")]
-position = Vector2(49, 14)
+position = Vector2(-250, 47)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(3, 0)
@@ -282,4 +283,7 @@ position = Vector2(-189, 119)
 position = Vector2(90, 87)
 
 [node name="Spike" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(-87, 108)
+position = Vector2(134, 105)
+
+[node name="BugSpawner" parent="." instance=ExtResource("6_hhh6p")]
+position = Vector2(-146, 24)
