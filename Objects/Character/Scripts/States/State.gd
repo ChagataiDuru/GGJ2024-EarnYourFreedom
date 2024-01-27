@@ -4,7 +4,7 @@ class_name State
 
 @export var  can_move : bool = true
 
-var playback :AnimationNodeStateMachinePlayback
+var playback  :  AnimationNodeStateMachinePlayback
 var character : CharacterBody2D
 
 func handle_input(event : InputEvent):

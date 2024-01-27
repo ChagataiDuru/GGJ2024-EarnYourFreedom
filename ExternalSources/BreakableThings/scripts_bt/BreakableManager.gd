@@ -1,10 +1,14 @@
 extends Node2D
 
 @onready var tilemap = $TileMap
+@onready var character = $MainCharacter
+@onready var spawn_point = $SpawnPoint
 const DESTROYED_FLAG = -1
 
 func _ready():
-	pass 
+	var target_position = spawn_point.position
+	character.position = target_position
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Left Click"):

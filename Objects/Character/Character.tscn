@@ -978,7 +978,7 @@ states/HorizontalMovement/node = SubResource("AnimationNodeBlendSpace1D_ag4fy")
 states/HorizontalMovement/position = Vector2(406, 93)
 states/Start/position = Vector2(175, 93)
 states/fall/node = SubResource("AnimationNodeAnimation_cmebs")
-states/fall/position = Vector2(406, -15)
+states/fall/position = Vector2(406, -14.75)
 states/jump/node = SubResource("AnimationNodeAnimation_6jpt7")
 states/jump/position = Vector2(258, -15)
 states/land/node = SubResource("AnimationNodeAnimation_e4yfj")
@@ -989,13 +989,15 @@ graph_offset = Vector2(-145, -78)
 [node name="MainCharacter" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_c8r2f")
-speed = 100.0
+speed = 125.0
+acceleration = 220.0
+jump_velocity = -400.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
 animation = &"walk"
-frame = 6
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -1045,6 +1047,13 @@ script = ExtResource("105_72nad")
 state_machine = NodePath("../StateMachine")
 metadata/_edit_use_anchors_ = true
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.02
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+
 [connection signal="on_transition" from="StateMachine/Ground" to="StateMachine" method="_on_transition"]
 [connection signal="on_transition" from="StateMachine/Air" to="StateMachine" method="_on_transition"]
 [connection signal="on_transition" from="StateMachine/Landing" to="StateMachine" method="_on_transition"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ms2xrl0md1v5"]
+
+[ext_resource type="Script" path="res://Objects/DeathArea/DeathArea.gd" id="1_aiipu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dutac"]
+
+[node name="DeathArea" type="Area2D"]
+script = ExtResource("1_aiipu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dutac")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
