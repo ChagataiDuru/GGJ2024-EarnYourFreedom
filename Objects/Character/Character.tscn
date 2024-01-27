@@ -990,16 +990,13 @@ graph_offset = Vector2(-145, -78)
 collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_c8r2f")
-speed = 125.0
-acceleration = 220.0
 jump_velocity = -400.0
-gravity_scale = 1.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
 animation = &"walk"
-frame = 1
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

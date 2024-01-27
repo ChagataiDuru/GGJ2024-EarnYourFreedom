@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var gravity_scale = 1.0
 @export var air_resistance = 200.0
 @export var air_acceleration = 300.0
+@export var doble_jump_acc: float = 0.8
 
 var air_jump = false
 var death_collision_check: bool
@@ -63,7 +64,7 @@ func handle_jump():
 		if Input.is_action_just_released("JUMP") and velocity.y < jump_velocity / 2:
 			velocity.y = jump_velocity / 2
 		if Input.is_action_just_pressed("JUMP") and air_jump and can_double_jump:
-			velocity.y = jump_velocity * 0.5
+			velocity.y = jump_velocity * doble_jump_acc
 			air_jump = false
 			
 func handle_acceleration(input_axis,delta):
