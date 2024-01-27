@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6y3s3qryb72t"]
+
+[ext_resource type="Script" path="res://Objects/Ballon/Ballon.gd" id="1_102j8"]
+[ext_resource type="Texture2D" uid="uid://btetangjv0ram" path="res://Objects/Ballon/image-removebg-preview.png" id="1_bsrj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqnh8"]
+size = Vector2(6.75, 17)
+
+[node name="Ballon" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_102j8")
+impulse = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bsrj1")
+
+[node name="Area2DRight" type="Area2D" parent="Sprite2D"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2DRight"]
+position = Vector2(-2.375, -5.5)
+shape = SubResource("RectangleShape2D_uqnh8")
+
+[node name="Area2DLeft" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2DLeft"]
+position = Vector2(5, -5.5)
+shape = SubResource("RectangleShape2D_uqnh8")
+
+[connection signal="body_entered" from="Sprite2D/Area2DRight" to="." method="_on_area_2d_right_body_entered"]
+[connection signal="body_entered" from="Sprite2D/Area2DLeft" to="." method="_on_area_2d_left_body_entered"]

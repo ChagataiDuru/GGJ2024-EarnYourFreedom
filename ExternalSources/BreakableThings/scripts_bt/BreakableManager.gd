@@ -9,7 +9,6 @@ func _ready():
 	var target_position = spawn_point.position
 	character.position = target_position
 
-
 func _unhandled_input(event):
 	if event.is_action_pressed("Left Click"):
 		damage_block(get_global_mouse_position())

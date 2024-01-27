@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var air_acceleration = 300.0
 
 var air_jump = false
+var death_collision_check: bool
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -20,7 +21,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var death_timer = $DeathTimer 
 
 func _ready():
-	animation_tree.active =true
+	death_collision_check = false
+	animation_tree.active = true
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
@@ -31,10 +33,11 @@ func _physics_process(delta):
 	apply_air_resistance(input_axis,delta)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		if collision.get_collider().name == "TileMapEnemy":
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "TileMapEnemy" and !death_collision_check:
 			print("I collided with ", collision.get_collider().name)
+			death_collision_check = true
 			get_hit()
 
 	var left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -76,7 +79,11 @@ func apply_friction(input_axis,delta):
 func apply_air_resistance(input_axis,delta):
 	if input_axis == 0 and not is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, air_resistance * delta)
-	
+
+func apply_central_impulse(vector):
+	velocity.x = vector.x
+	velocity.y = vector.y
+
 func get_hit() -> void:
 	death_timer.start(randf_range(1.5,2.5))
 	var tween = create_tween().set_loops(4)
