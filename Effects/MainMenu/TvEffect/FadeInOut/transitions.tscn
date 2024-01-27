@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcokmnmctlo6t"]
 
-[ext_resource type="PackedScene" uid="uid://dfj5x7xvlaiyi" path="res://Objects/TvEffect/TVEffect.tscn" id="1_cysq5"]
+[ext_resource type="PackedScene" uid="uid://dfj5x7xvlaiyi" path="res://Effects/MainMenu/TvEffect/TVEffect.tscn" id="1_cysq5"]
 
 [sub_resource type="Animation" id="Animation_em467"]
 resource_name = "fade_in"
