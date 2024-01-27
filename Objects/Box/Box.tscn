@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dleuw1pjoj3s1"]
 
-[ext_resource type="Texture2D" uid="uid://dxvxve8lh2vyd" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/big-crate.png" id="1_8lhte"]
+[ext_resource type="Texture2D" uid="uid://cg3gqt8oxxby8" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/big-crate.png" id="1_8lhte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwl0h"]
 size = Vector2(31, 30)
