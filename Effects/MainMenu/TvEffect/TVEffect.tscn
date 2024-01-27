@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfj5x7xvlaiyi"]
 
-[ext_resource type="Texture2D" uid="uid://drf17l7f1lpil" path="res://Effects/MainMenu/TvEffect/TV_effect2.png" id="1_onngr"]
-[ext_resource type="Texture2D" uid="uid://dks6u8ti73rnf" path="res://Effects/MainMenu/TvEffect/ShadowFigure.png" id="2_bc751"]
+[ext_resource type="Texture2D" path="res://Objects/TvEffect/TV_effect2.png" id="1_hdvqr"]
+[ext_resource type="Texture2D" path="res://Objects/TvEffect/ShadowFigure.png" id="2_m85ya"]
 
 [node name="TvEffect" type="Control"]
 layout_mode = 3
@@ -14,29 +14,29 @@ grow_vertical = 2
 [node name="TvEffect2" type="Sprite2D" parent="."]
 position = Vector2(576, 323.75)
 scale = Vector2(36, 36.0278)
-texture = ExtResource("1_onngr")
+texture = ExtResource("1_hdvqr")
 
 [node name="ShadowFigure" type="Sprite2D" parent="."]
 position = Vector2(352, 512)
 scale = Vector2(8.875, 9.63889)
-texture = ExtResource("2_bc751")
+texture = ExtResource("2_m85ya")
 
 [node name="ShadowFigure2" type="Sprite2D" parent="."]
 position = Vector2(848, 512)
 scale = Vector2(9.375, 9.00694)
-texture = ExtResource("2_bc751")
+texture = ExtResource("2_m85ya")
 
 [node name="ShadowFigure3" type="Sprite2D" parent="."]
 position = Vector2(1040, 504)
 scale = Vector2(11.4375, 11.8194)
-texture = ExtResource("2_bc751")
+texture = ExtResource("2_m85ya")
 
 [node name="ShadowFigure4" type="Sprite2D" parent="."]
 position = Vector2(640, 568)
 scale = Vector2(9.875, 9.13889)
-texture = ExtResource("2_bc751")
+texture = ExtResource("2_m85ya")
 
 [node name="ShadowFigure5" type="Sprite2D" parent="."]
 position = Vector2(128, 464)
 scale = Vector2(7.4375, 7.88194)
-texture = ExtResource("2_bc751")
+texture = ExtResource("2_m85ya")

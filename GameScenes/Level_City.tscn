@@ -973,6 +973,8 @@ sources/0 = SubResource("TileSetAtlasSource_sn647")
 [node name="LevelCity" type="Node2D"]
 script = ExtResource("1_7es0y")
 
+[node name="MainCharacter" parent="." instance=ExtResource("5_w71xu")]
+
 [node name="BackGroundC" parent="." instance=ExtResource("1_yj5ku")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -994,5 +996,3 @@ layer_0/tile_data = PackedInt32Array(1572921, 196608, 1, 1572922, 196608, 1, 163
 [node name="SpawnPoint" type="Sprite2D" parent="."]
 position = Vector2(384, 360)
 texture = ExtResource("6_iebqm")
-
-[node name="MainCharacter" parent="." instance=ExtResource("5_w71xu")]
