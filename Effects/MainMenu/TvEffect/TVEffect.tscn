@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfj5x7xvlaiyi"]
 
-[ext_resource type="Texture2D" uid="uid://drf17l7f1lpil" path="res://Objects/TvEffect/TV_effect2.png" id="1_onngr"]
-[ext_resource type="Texture2D" uid="uid://dks6u8ti73rnf" path="res://Objects/TvEffect/ShadowFigure.png" id="2_bc751"]
+[ext_resource type="Texture2D" uid="uid://drf17l7f1lpil" path="res://Effects/MainMenu/TvEffect/TV_effect2.png" id="1_onngr"]
+[ext_resource type="Texture2D" uid="uid://dks6u8ti73rnf" path="res://Effects/MainMenu/TvEffect/ShadowFigure.png" id="2_bc751"]
 
 [node name="TvEffect" type="Control"]
 layout_mode = 3
