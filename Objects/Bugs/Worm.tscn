@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dae8wxqbptaip"]
+
+[ext_resource type="Texture2D" uid="uid://8pr4bktyiyin" path="res://ExternalSources/Animated insect enemy assets/Maggot.png" id="1_7gumx"]
+[ext_resource type="Script" path="res://Objects/Bugs/Worm.gd" id="1_56pyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8fai"]
+atlas = ExtResource("1_7gumx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqc3n"]
+atlas = ExtResource("1_7gumx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr66k"]
+atlas = ExtResource("1_7gumx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2qf2"]
+atlas = ExtResource("1_7gumx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8ah0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8fai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqc3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr66k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2qf2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f135e"]
+radius = 7.0
+
+[node name="Worm" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_56pyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i8ah0")
+animation = &"idle"
+speed_scale = 0.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_f135e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
