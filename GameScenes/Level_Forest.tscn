@@ -374,7 +374,6 @@ sources/0 = SubResource("TileSetAtlasSource_m75j2")
 [node name="Level_Forest" type="Node2D"]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_wehd4")]
-visible = false
 offset = Vector2(0, -8)
 transform = Transform2D(1, 0, 0, 1, 0, -8)
 
