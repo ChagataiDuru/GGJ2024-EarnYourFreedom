@@ -282,5 +282,3 @@ texture = ExtResource("10_ga8oe")
 [node name="Tree4" type="Sprite2D" parent="Prop"]
 position = Vector2(1056, 336)
 texture = ExtResource("5_28wm6")
-
-[node name="BackgroundF" type="Node2D" parent="."]

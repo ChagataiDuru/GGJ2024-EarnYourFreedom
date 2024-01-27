@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddmj6qro7nr68"]
 
-[ext_resource type="Texture2D" uid="uid://cr8t6uc1hnam5" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/spikes.png" id="1_fd1ay"]
+[ext_resource type="Texture2D" uid="uid://30ndkefwqx5c" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/spikes.png" id="1_fd1ay"]
 [ext_resource type="Script" path="res://Objects/Spike/Spike.gd" id="1_yjiq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr1rd"]
@@ -10,6 +10,7 @@ size = Vector2(14.6875, 5.71875)
 script = ExtResource("1_yjiq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -55
 texture = ExtResource("1_fd1ay")
 
 [node name="Area2Detect" type="Area2D" parent="Sprite2D"]

@@ -135,7 +135,7 @@ position = Vector2(1.5, -6)
 scale = Vector2(0.53125, 0.484375)
 sprite_frames = SubResource("SpriteFrames_t1dd7")
 animation = &"Idle"
-frame_progress = 0.863401
+frame_progress = 0.0439851
 speed_scale = 2.0
 
 [node name="Area2DRight" type="Area2D" parent="."]
