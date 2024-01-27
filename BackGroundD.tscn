@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7hiotaaxdb56"]
+
+[ext_resource type="Texture2D" uid="uid://d0ntpor2j4h15" path="res://ExternalSources/bulkhead-walls-files/bulkhead-wallsx3.png" id="1_g63gm"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1072, 0)
+
+[node name="Bulkhead-wallsx3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(536, 324)
+scale = Vector2(1.01515, 0.964286)
+texture = ExtResource("1_g63gm")
