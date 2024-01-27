@@ -3,7 +3,7 @@ extends State
 class_name  Ground_state
 
 @export var air_state : State
-func state_process(delta):
+func state_process(_delta):
 	if !character.is_on_floor():
 		on_transition.emit(air_state)
 	

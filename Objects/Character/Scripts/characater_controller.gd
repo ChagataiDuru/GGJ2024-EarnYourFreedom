@@ -16,7 +16,6 @@ var can_double_jump: bool = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animation_tree = $AnimationTree
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var state_machine : StateMachine = $StateMachine
 @onready var coyote_jump_timer = $CoyoteTimer
@@ -24,7 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	death_collision_check = false
-	animation_tree.active = true
+
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
@@ -60,6 +59,7 @@ func handle_jump():
 	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("JUMP"):
 			velocity.y = jump_velocity
+			
 	if not is_on_floor():
 		if Input.is_action_just_released("JUMP") and velocity.y < jump_velocity / 2:
 			velocity.y = jump_velocity / 2
@@ -72,10 +72,10 @@ func handle_acceleration(input_axis,delta):
 	if (input_axis != 0 and state_machine.check_can_move()):
 		velocity.x = move_toward(velocity.x, speed * input_axis, acceleration * delta)
 		animated_sprite.flip_h = true if input_axis < 0  else false
-		animation_tree["parameters/HorizontalMovement/blend_position"] = input_axis
+		#animation_tree["parameters/HorizontalMovement/blend_position"] = input_axis
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		animation_tree["parameters/HorizontalMovement/blend_position"] = 0
+		#animation_tree["parameters/HorizontalMovement/blend_position"] = 0
 func handle_air_acceleration(input_axis,delta):
 	if is_on_floor(): return
 	if input_axis !=0:
