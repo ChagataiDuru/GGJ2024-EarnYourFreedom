@@ -15,7 +15,7 @@ impulse = 500.0
 texture = ExtResource("1_bsrj1")
 
 [node name="Area2DRight" type="Area2D" parent="Sprite2D"]
-collision_layer = 7
+collision_layer = 4
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2DRight"]
@@ -23,6 +23,8 @@ position = Vector2(-2.375, -5.5)
 shape = SubResource("RectangleShape2D_uqnh8")
 
 [node name="Area2DLeft" type="Area2D" parent="Sprite2D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2DLeft"]
 position = Vector2(5, -5.5)

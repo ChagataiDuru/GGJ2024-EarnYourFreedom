@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dleuw1pjoj3s1"]
+
+[ext_resource type="Texture2D" uid="uid://dxvxve8lh2vyd" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/big-crate.png" id="1_8lhte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwl0h"]
+size = Vector2(31, 30)
+
+[node name="Box" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8lhte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_rwl0h")

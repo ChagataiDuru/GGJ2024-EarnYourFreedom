@@ -62,4 +62,5 @@ JUMP={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Character"
 2d_physics/layer_3="Obstacle"
-2d_physics/layer_4="Coin"
+2d_physics/layer_4="Box"
+2d_physics/layer_5="Coin"
