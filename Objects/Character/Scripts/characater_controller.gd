@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 var air_jump = false
 var death_collision_check: bool
+var can_double_jump: bool = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -61,7 +62,7 @@ func handle_jump():
 	if not is_on_floor():
 		if Input.is_action_just_released("JUMP") and velocity.y < jump_velocity / 2:
 			velocity.y = jump_velocity / 2
-		if Input.is_action_just_pressed("JUMP") and air_jump:
+		if Input.is_action_just_pressed("JUMP") and air_jump and can_double_jump:
 			velocity.y = jump_velocity * 0.5
 			air_jump = false
 			

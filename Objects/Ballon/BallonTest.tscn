@@ -279,19 +279,7 @@ layer_0/tile_data = PackedInt32Array(1638428, 131073, 2, 1572892, 131073, 2, 150
 position = Vector2(-189, 119)
 
 [node name="Box" parent="." instance=ExtResource("4_kl62d")]
-position = Vector2(-69, 88)
+position = Vector2(90, 87)
 
 [node name="Spike" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(-46, 107)
-
-[node name="Spike2" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(-46, 107)
-
-[node name="Spike3" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(-101, 99)
-
-[node name="Spike4" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(-244, 75)
-
-[node name="Spike5" parent="." instance=ExtResource("5_66gf0")]
-position = Vector2(7, 107)
+position = Vector2(-87, 108)
