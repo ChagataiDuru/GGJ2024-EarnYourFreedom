@@ -7,7 +7,7 @@ const DESTROYED_FLAG = -1
 
 func _ready():
 	var target_position = spawn_point.position
-	character.position = target_position
+	#character.position = target_position
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Left Click"):

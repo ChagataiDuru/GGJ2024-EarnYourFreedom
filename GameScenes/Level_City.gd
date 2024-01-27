@@ -5,4 +5,3 @@ extends Node2D
 func _ready():
 	var target_position = spawn_point.position
 	character.position = target_position
-

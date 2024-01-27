@@ -33,12 +33,17 @@ func _physics_process(delta):
 	apply_air_resistance(input_axis,delta)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
+	
+	#Collision Checks here
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().name == "TileMapEnemy" and !death_collision_check:
+		if collision.get_collider().name == "Spike" or collision.get_collider().name == "TileMapEnemy" and !death_collision_check:
 			print("I collided with ", collision.get_collider().name)
 			death_collision_check = true
 			get_hit()
+		elif collision.get_collider() is RigidBody2D:
+			pass
+			#collision.apply_central_impulse(-collision.get_normal() * 5)
 
 	var left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 	if left_ledge:

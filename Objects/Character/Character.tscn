@@ -993,6 +993,7 @@ script = ExtResource("1_c8r2f")
 speed = 125.0
 acceleration = 220.0
 jump_velocity = -400.0
+gravity_scale = 1.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)

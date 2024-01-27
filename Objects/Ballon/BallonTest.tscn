@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkfqvw7u2g8ok"]
+[gd_scene load_steps=8 format=3 uid="uid://bkfqvw7u2g8ok"]
 
 [ext_resource type="Texture2D" uid="uid://bkt53sx7g2x4f" path="res://ExternalSources/BreakableThings/world.png" id="1_yflbj"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="2_xpws5"]
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="3_76mw4"]
 [ext_resource type="PackedScene" uid="uid://dleuw1pjoj3s1" path="res://Objects/Box/Box.tscn" id="4_kl62d"]
+[ext_resource type="PackedScene" uid="uid://ddmj6qro7nr68" path="res://Objects/Spike/Spike.tscn" id="5_66gf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yxk"]
 texture = ExtResource("1_yflbj")
@@ -279,3 +280,18 @@ position = Vector2(-189, 119)
 
 [node name="Box" parent="." instance=ExtResource("4_kl62d")]
 position = Vector2(-69, 88)
+
+[node name="Spike" parent="." instance=ExtResource("5_66gf0")]
+position = Vector2(-46, 107)
+
+[node name="Spike2" parent="." instance=ExtResource("5_66gf0")]
+position = Vector2(-46, 107)
+
+[node name="Spike3" parent="." instance=ExtResource("5_66gf0")]
+position = Vector2(-101, 99)
+
+[node name="Spike4" parent="." instance=ExtResource("5_66gf0")]
+position = Vector2(-244, 75)
+
+[node name="Spike5" parent="." instance=ExtResource("5_66gf0")]
+position = Vector2(7, 107)
