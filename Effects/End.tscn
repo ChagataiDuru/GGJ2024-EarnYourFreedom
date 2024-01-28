@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjs57eh146n0s"]
+
+[ext_resource type="Texture2D" uid="uid://fm05n1k1pwq" path="res://ExternalSources/End.png" id="1_kluyv"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.65576, 1.71447)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="End" type="Sprite2D" parent="."]
+position = Vector2(582, 324.875)
+scale = Vector2(73.25, 73.5833)
+texture = ExtResource("1_kluyv")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 432.0
+offset_right = 816.0
+offset_bottom = 512.0
+text = "Commit Crime"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Congrats you earned you freedom.
+If you want to compete again commit a crime and wait WE WILL FIND YOU."

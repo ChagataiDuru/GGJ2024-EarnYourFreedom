@@ -55,6 +55,7 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
+scale = Vector2(1.68, 1.6575)
 script = ExtResource("1_minff")
 
 [node name="Play" type="Button" parent="."]
@@ -64,6 +65,7 @@ offset_right = 704.0
 offset_bottom = 288.0
 tooltip_text = "You are taking your own risk."
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 448.0
@@ -73,6 +75,7 @@ offset_bottom = 384.0
 tooltip_text = "You are  making a good decition."
 text = "Quit
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="TvEffect2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -122,6 +125,8 @@ scale = Vector2(8.0625, 6.75)
 texture = ExtResource("4_88np2")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_ths3y")]
+scale = Vector2(1.66, 1.66)
+transform = Transform2D(1.66, 0, 0, 1.66, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

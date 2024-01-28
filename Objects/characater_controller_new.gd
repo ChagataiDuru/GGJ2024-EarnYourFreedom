@@ -43,6 +43,8 @@ func _physics_process(delta):
 		#Collision Checks here
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
+			if collision.get_collider().name != "TileMap":
+				print(collision.get_collider().name)
 			if collision.get_collider().name == "Spike" or collision.get_collider().name == "TileMapEnemy" and !death_collision_check:
 				print("I collided with ", collision.get_collider().name)
 				death_collision_check = true
@@ -53,6 +55,7 @@ func _physics_process(delta):
 			elif collision.get_collider() is RigidBody2D:
 				collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
 			elif collision.get_collider().name == "TeleportCity":
+				print("AREADAAA")
 				if Input.is_action_just_pressed("JUMP"):
 					get_tree().change_scene_to_file("res://GameScenes/Level_City.tscn")
 			elif collision.get_collider().name == "TeleportForest":

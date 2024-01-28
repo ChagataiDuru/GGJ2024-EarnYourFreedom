@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bl37ylrk7y8vq"]
 
-[ext_resource type="Script" path="res://assets/effects/VFX.gd" id="1_bdtne"]
-[ext_resource type="Texture2D" uid="uid://bxdv7w2of2ho5" path="res://resources/SmallSmoke1.png" id="3_lilfy"]
-[ext_resource type="Texture2D" uid="uid://b3nfdk71sfbhp" path="res://resources/SmallSmoke2.png" id="4_jlss4"]
+[ext_resource type="Script" path="res://ExternalSources/BreakableThings/effects/VFX.gd" id="1_bdtne"]
+[ext_resource type="Texture2D" uid="uid://bxdv7w2of2ho5" path="res://ExternalSources/BreakableThings/SmallSmoke1.png" id="3_lilfy"]
+[ext_resource type="Texture2D" uid="uid://b3nfdk71sfbhp" path="res://ExternalSources/BreakableThings/SmallSmoke2.png" id="4_jlss4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4u0e"]
 atlas = ExtResource("3_lilfy")

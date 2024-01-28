@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="5_rq42a"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="6_jirje"]
 [ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_xq4sq"]
-[ext_resource type="Script" path="res://Effects/Level_Next/DtoC.gd" id="9_r3q7g"]
+[ext_resource type="Script" path="res://GameScenes/TeleportCity.gd" id="9_to0jh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlm47"]
 size = Vector2(130, 538)
@@ -62,7 +62,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_wxj3p")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfiy5"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n7fs3"]
+radius = 16.9412
+height = 33.8823
 
 [node name="Level_Dungeon" type="Node2D"]
 script = ExtResource("1_5sy4f")
@@ -113,17 +115,24 @@ position = Vector2(1440, 464)
 
 [node name="SpawnPoint" type="Sprite2D" parent="."]
 z_index = -3
-position = Vector2(64, 392)
+position = Vector2(56, 392)
 scale = Vector2(0.944444, 1)
 texture = ExtResource("8_xq4sq")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("9_r3q7g")
+[node name="TeleportCity" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1600, 424)
+scale = Vector2(0.944444, 1)
+texture = ExtResource("8_xq4sq")
+flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(160, 368)
-shape = SubResource("RectangleShape2D_tfiy5")
+[node name="TeleportCity" type="Area2D" parent="TeleportCity"]
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("9_to0jh")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportCity/TeleportCity"]
+shape = SubResource("CapsuleShape2D_n7fs3")
+
+[connection signal="body_entered" from="TeleportCity/TeleportCity" to="TeleportCity/TeleportCity" method="_on_body_entered"]

@@ -992,7 +992,7 @@ air_resistance = 300.0
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_bhtxo")
 animation = &"walk"
-frame = 1
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

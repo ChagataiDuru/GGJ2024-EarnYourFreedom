@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://tpak5t1kpntg"]
+
+[ext_resource type="Texture2D" uid="uid://fm05n1k1pwq" path="res://ExternalSources/End.png" id="1_ot63h"]
+[ext_resource type="Script" path="res://Main.gd" id="1_sk4yl"]
+
+[node name="EndGame" type="Node2D"]
+scale = Vector2(0.01, 0.01)
+script = ExtResource("1_sk4yl")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(88000, 50400)
+scale = Vector2(15013.9, 16279.5)
+texture = ExtResource("1_ot63h")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 52800.0
+offset_top = 54400.0
+offset_right = 53056.0
+offset_bottom = 54464.0
+scale = Vector2(339.687, 352.208)
+tooltip_text = "You are taking your own risk."
+text = "Commit Crime Again!"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 32000.0
+offset_top = 27200.0
+offset_right = 32598.0
+offset_bottom = 27262.0
+scale = Vector2(212.678, 277.696)
+text = "                                      Congrats you earned you freedom.
+If you want to compete again commit a crime and wait WE WILL FIND YOU."
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
