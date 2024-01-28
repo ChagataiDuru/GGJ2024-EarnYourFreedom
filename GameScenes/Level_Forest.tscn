@@ -859,7 +859,7 @@ position = Vector2(656, 292)
 position = Vector2(1776, 403)
 
 [node name="BugSpawner" parent="." instance=ExtResource("5_q3t6x")]
-position = Vector2(1731, 323)
+position = Vector2(1728, 304)
 
 [node name="BugSpawner2" parent="." instance=ExtResource("5_q3t6x")]
 position = Vector2(905, 343)
@@ -868,7 +868,7 @@ position = Vector2(905, 343)
 position = Vector2(1108, 435)
 
 [node name="SpawnPoint" type="Sprite2D" parent="."]
-position = Vector2(92, 414)
+position = Vector2(1664, 376)
 texture = ExtResource("7_7aijg")
 
 [node name="Spike4" parent="." instance=ExtResource("4_ulnwv")]

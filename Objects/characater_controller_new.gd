@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var air_resistance = 200.0
 @export var air_acceleration = 300.0
 @export var doble_jump_acc: float = 0.8
+@export var push_force = 80
 
 var air_jump = false
 var death_collision_check: bool
@@ -48,7 +49,7 @@ func _physics_process(delta):
 				is_death = true
 				get_hit()
 			elif collision.get_collider() is RigidBody2D:
-				collision.get_collider().apply_central_impulse(-collision.get_normal() * 85)
+				collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
 
 		var left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 		if left_ledge:
