@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7hiotaaxdb56"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mopv7"]
-load_path = "res://.godot/imported/bulkhead-wallsx3.png-15aa11c908a968809d999fb46bcb528b.ctex"
+[ext_resource type="Texture2D" uid="uid://wuxakx4gkehe" path="res://ExternalSources/bulkhead-walls-files/bulkhead-wallsx1.png" id="1_4evkh"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -9,6 +8,6 @@ load_path = "res://.godot/imported/bulkhead-wallsx3.png-15aa11c908a968809d999fb4
 motion_mirroring = Vector2(1072, 0)
 
 [node name="Bulkhead-wallsx3" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(536, 324)
-scale = Vector2(1.01515, 0.964286)
-texture = SubResource("CompressedTexture2D_mopv7")
+position = Vector2(536, 541)
+scale = Vector2(3.04545, 4.8125)
+texture = ExtResource("1_4evkh")

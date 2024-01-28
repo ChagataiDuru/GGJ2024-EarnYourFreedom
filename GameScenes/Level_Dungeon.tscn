@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cbjabyrhpflml" path="res://ExternalSources/16-bit-spike-Sheet.png" id="4_euluf"]
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="5_rq42a"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="6_jirje"]
-[ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_xq4sq"]
+[ext_resource type="Texture2D" uid="uid://cglh2sksfwtu0" path="res://ExternalSources/DungeonDoor.png" id="8_xq4sq"]
 [ext_resource type="Script" path="res://GameScenes/TeleportCity.gd" id="9_to0jh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlm47"]
@@ -16,17 +16,31 @@ size = Vector2(130, 538)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g816r"]
 texture = ExtResource("2_qfosd")
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_iimul"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_g816r")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uws3t"]
 texture = ExtResource("3_q4vxg")
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_6y4fi"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uws3t")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxj3p"]

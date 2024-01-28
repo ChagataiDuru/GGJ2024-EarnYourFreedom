@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="5_w71xu"]
 [ext_resource type="Texture2D" uid="uid://0shfsnctvcvj" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/bush.png" id="6_iebqm"]
 [ext_resource type="PackedScene" uid="uid://dleuw1pjoj3s1" path="res://Objects/Box/Box.tscn" id="7_navf4"]
-[ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_ivrvk"]
+[ext_resource type="Texture2D" uid="uid://cglh2sksfwtu0" path="res://ExternalSources/DungeonDoor.png" id="8_ivrvk"]
 [ext_resource type="Script" path="res://GameScenes/TeleportForest.gd" id="9_4trql"]
 [ext_resource type="Texture2D" uid="uid://bwf1n7cd51p40" path="res://ExternalSources/Sunny-land-forest-files/PNG/environment/props/tree.png" id="10_dor6q"]
 

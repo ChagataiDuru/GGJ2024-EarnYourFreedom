@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmj6qro7nr68" path="res://Objects/Spike/Spike.tscn" id="4_ulnwv"]
 [ext_resource type="PackedScene" uid="uid://bfn34hylc8g2j" path="res://Objects/Bugs/BugSpawner.tscn" id="5_q3t6x"]
 [ext_resource type="Texture2D" uid="uid://bkl14cx0ptu02" path="res://ExternalSources/Sunny-land-forest-files/PNG/environment/props/plant.png" id="7_7aijg"]
-[ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_uro1e"]
+[ext_resource type="Texture2D" uid="uid://cglh2sksfwtu0" path="res://ExternalSources/DungeonDoor.png" id="8_uro1e"]
 [ext_resource type="Script" path="res://GameScenes/TeleportEnd.gd" id="9_01mrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dx1s"]
