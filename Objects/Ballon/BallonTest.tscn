@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkfqvw7u2g8ok"]
+[gd_scene load_steps=10 format=3 uid="uid://bkfqvw7u2g8ok"]
 
 [ext_resource type="Texture2D" uid="uid://bkt53sx7g2x4f" path="res://ExternalSources/BreakableThings/world.png" id="1_yflbj"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="2_xpws5"]
+[ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="3_76mw4"]
 [ext_resource type="PackedScene" uid="uid://dleuw1pjoj3s1" path="res://Objects/Box/Box.tscn" id="4_kl62d"]
 [ext_resource type="PackedScene" uid="uid://dafu1kojxetbm" path="res://Objects/Bugs/Mantis.tscn" id="6_7r7oy"]
 [ext_resource type="PackedScene" uid="uid://bfn34hylc8g2j" path="res://Objects/Bugs/BugSpawner.tscn" id="6_hhh6p"]
-[ext_resource type="PackedScene" uid="uid://m0d7k2v7ax3m" path="res://Objects/Character/MainCharacter_scene.tscn" id="6_tv8a7"]
+[ext_resource type="PackedScene" uid="uid://dae8wxqbptaip" path="res://Objects/Bugs/Worm.tscn" id="7_yf35d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1yxk"]
 texture = ExtResource("1_yflbj")
@@ -267,10 +268,11 @@ sources/1 = SubResource("TileSetAtlasSource_p1yxk")
 
 [node name="BallonTest" type="Node2D"]
 
-[node name="MainCharacter" parent="." instance=ExtResource("6_tv8a7")]
+[node name="MainCharacter" parent="." instance=ExtResource("3_76mw4")]
+position = Vector2(-53, 32)
 
 [node name="Mantis" parent="." instance=ExtResource("6_7r7oy")]
-position = Vector2(0, 26)
+position = Vector2(-3, 39)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(3, 0)
@@ -287,3 +289,6 @@ collision_layer = 9
 
 [node name="BugSpawner" parent="." instance=ExtResource("6_hhh6p")]
 position = Vector2(-181, 23)
+
+[node name="Worm" parent="." instance=ExtResource("7_yf35d")]
+position = Vector2(-26, 0)
