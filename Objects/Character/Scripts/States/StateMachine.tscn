@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://xmr3qowhyuha"]
+
+[ext_resource type="Script" path="res://Objects/Character/Scripts/States/StateMachine.gd" id="1_nfpgy"]
+[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Ground.gd" id="2_b0hr4"]
+[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Air.gd" id="3_goq3v"]
+[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Landing.gd" id="4_4eldf"]
+
+[node name="StateMachine" type="Node"]
+script = ExtResource("1_nfpgy")
+
+[node name="Ground" type="Node" parent="." node_paths=PackedStringArray("air_state")]
+script = ExtResource("2_b0hr4")
+air_state = NodePath("")
+
+[node name="Air" type="Node" parent="." node_paths=PackedStringArray("landing_state")]
+script = ExtResource("3_goq3v")
+landing_state = NodePath("")
+
+[node name="Landing" type="Node" parent="." node_paths=PackedStringArray("ground_state")]
+script = ExtResource("4_4eldf")
+ground_state = NodePath("")
+
+[connection signal="on_transition" from="Ground" to="." method="_on_transition"]
+[connection signal="on_transition" from="Air" to="." method="_on_transition"]
+[connection signal="on_transition" from="Landing" to="." method="_on_transition"]

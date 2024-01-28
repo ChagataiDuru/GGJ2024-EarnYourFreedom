@@ -15,7 +15,7 @@ func _ready():
 		if(child is State):
 			# TODO set up states
 			child.character = character
-			child.playback= animation_tree["parameters/playback"]
+			#child.playback= animation_tree["parameters/playback"]
 			states.append(child)
 			
 		else:

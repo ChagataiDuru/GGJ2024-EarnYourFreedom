@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://bk0el5j3fgts6"]
+[gd_scene load_steps=135 format=3 uid="uid://bk0el5j3fgts6"]
 
 [ext_resource type="Script" path="res://Objects/Character/Scripts/characater_controller.gd" id="1_c8r2f"]
 [ext_resource type="Texture2D" uid="uid://bex1v0ujpjucb" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_0.png" id="2_q4drb"]
@@ -100,11 +100,6 @@
 [ext_resource type="Texture2D" uid="uid://bjqim7wdprgpo" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_walk_5.png" id="98_pro20"]
 [ext_resource type="Texture2D" uid="uid://d1ndd7oqmcxyo" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_walk_6.png" id="99_fcjgx"]
 [ext_resource type="Texture2D" uid="uid://bs5v0ktrne3ms" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_walk_7.png" id="100_b2ilv"]
-[ext_resource type="Script" path="res://Objects/Character/Scripts/States/StateMachine.gd" id="101_eklq3"]
-[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Ground.gd" id="102_aejb8"]
-[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Air.gd" id="103_6nfgj"]
-[ext_resource type="Script" path="res://Objects/Character/Scripts/States/Landing.gd" id="104_cj4nn"]
-[ext_resource type="Script" path="res://Objects/Character/Scripts/DebugLabel.gd" id="105_72nad"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tqafl"]
 animations = [{
@@ -996,7 +991,7 @@ jump_velocity = -400.0
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
 animation = &"walk"
-frame = 1
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -1018,41 +1013,10 @@ tree_root = SubResource("AnimationNodeStateMachine_6fd0j")
 anim_player = NodePath("../AnimationPlayer")
 parameters/HorizontalMovement/blend_position = -0.698444
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state", "character", "animation_tree")]
-script = ExtResource("101_eklq3")
-current_state = NodePath("Ground")
-character = NodePath("..")
-animation_tree = NodePath("../AnimationTree")
-
-[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("air_state")]
-script = ExtResource("102_aejb8")
-air_state = NodePath("../Air")
-
-[node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("landing_state")]
-script = ExtResource("103_6nfgj")
-landing_state = NodePath("../Landing")
-
-[node name="Landing" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state")]
-script = ExtResource("104_cj4nn")
-ground_state = NodePath("../Ground")
-
-[node name="DebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
-offset_left = -43.3333
-offset_top = -39.6667
-offset_right = 43.6667
-offset_bottom = -16.6667
-text = "State: "
-script = ExtResource("105_72nad")
-state_machine = NodePath("../StateMachine")
-metadata/_edit_use_anchors_ = true
-
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
 
 [node name="DeathTimer" type="Timer" parent="."]
 
-[connection signal="on_transition" from="StateMachine/Ground" to="StateMachine" method="_on_transition"]
-[connection signal="on_transition" from="StateMachine/Air" to="StateMachine" method="_on_transition"]
-[connection signal="on_transition" from="StateMachine/Landing" to="StateMachine" method="_on_transition"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
