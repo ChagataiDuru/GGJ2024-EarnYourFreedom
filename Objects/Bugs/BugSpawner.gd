@@ -22,7 +22,7 @@ func _on_area_2d_body_entered(body):
 		var number = randi_range(0,1)
 		var bug = load(bug_library[number]).instantiate()
 		print("aaa",self.position)
-		self.call_deferred("add_child",bug.setup(self.position))
+		self.add_child(bug)
 		bug.setup(self.position)
 		is_instantiated = true
 	

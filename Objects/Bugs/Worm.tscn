@@ -40,11 +40,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f135e"]
-radius = 7.0
+radius = 8.0
 
-[node name="Worm" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 7
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_56pyw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -53,7 +51,5 @@ animation = &"idle"
 speed_scale = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(-2, 8)
 shape = SubResource("CircleShape2D_f135e")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
