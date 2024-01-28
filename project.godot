@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SoundTrack="*res://Effects/sound_track.tscn"
 AudioManager="*res://Globals/AudioManager.gd"
 SignalManager="*res://Globals/SignalManager.gd"
 

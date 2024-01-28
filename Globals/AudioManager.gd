@@ -7,6 +7,12 @@ var audio_library = {
 	"STONE_HIT":["res://ExternalSources/BreakableThings/sfx/stone_hit.wav", "res://ExternalSources/BreakableThings/sfx/stone_hit_2.wav"],
 	"STONE_BREAK":["res://ExternalSources/BreakableThings/sfx/stone_break.wav"],
 	"LAND":["res://ExternalSources/BreakableThings/sfx/land.wav", "res://ExternalSources/BreakableThings/sfx/land_2.wav"],
+	"CHEERS":["res://ExternalSources/Sounds/audience-laughing-6323.mp3", "res://ExternalSources/Sounds/crowd_laughingwav-14578.mp3"],
+	"DEATH":["res://ExternalSources/Sounds/male-scream-in-fear-123079.mp3"],
+	"DIRT_RUN":["res://ExternalSources/Sounds/Running On Dirt - Sound Effect.mp3"],
+	"FOREST_RUN":["res://ExternalSources/Sounds/Footsteps Running in Pine Forest  HQ Sound Effects.mp3"],
+	"METAL_RUN":["res://ExternalSources/Sounds/Running On Metal Plank [SOUND EFFECT].mp3"],
+	"SOUNDTRACK":["res://ExternalSources/Sounds/MiniMusicMan - Crazy La Paint.mp3"]
 }
 
 func play_audio(audio_name):

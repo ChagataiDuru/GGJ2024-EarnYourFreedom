@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dasiw7jts1kwc"]
+[gd_scene load_steps=11 format=3 uid="uid://dasiw7jts1kwc"]
 
 [ext_resource type="PackedScene" uid="uid://b2pnn2hgbdht2" path="res://Sahne/BackgroundF.tscn" id="1_wehd4"]
 [ext_resource type="Texture2D" uid="uid://f0gcp6f5a7pc" path="res://ExternalSources/Sunny-land-forest-files/PNG/environment/layers/tileset.png" id="2_a2xpq"]
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="3_v5kik"]
 [ext_resource type="PackedScene" uid="uid://ddmj6qro7nr68" path="res://Objects/Spike/Spike.tscn" id="4_ulnwv"]
+[ext_resource type="PackedScene" uid="uid://bfn34hylc8g2j" path="res://Objects/Bugs/BugSpawner.tscn" id="5_q3t6x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dx1s"]
 size = Vector2(194, 570)
@@ -738,3 +739,12 @@ position = Vector2(656, 292)
 
 [node name="Spike2" parent="." instance=ExtResource("4_ulnwv")]
 position = Vector2(1776, 403)
+
+[node name="BugSpawner" parent="." instance=ExtResource("5_q3t6x")]
+position = Vector2(1720, 328)
+
+[node name="BugSpawner2" parent="." instance=ExtResource("5_q3t6x")]
+position = Vector2(873, 294)
+
+[node name="Spike3" parent="." instance=ExtResource("4_ulnwv")]
+position = Vector2(1108, 435)

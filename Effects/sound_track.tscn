@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c46amwfu7ouur"]
+
+[ext_resource type="AudioStream" uid="uid://db7jw0boq3103" path="res://ExternalSources/Sounds/MiniMusicMan - Crazy La Paint.mp3" id="1_1nnfn"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_1nnfn")
+autoplay = true
