@@ -1012,7 +1012,7 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_dnlp5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(8, 8)
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.05

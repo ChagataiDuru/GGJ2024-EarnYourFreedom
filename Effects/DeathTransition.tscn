@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://7trbjvu3dknu"]
+[gd_scene load_steps=6 format=3 uid="uid://cnd015gulhhby"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_minff"]
-[ext_resource type="PackedScene" uid="uid://8bff7xttlcsb" path="res://GameScenes/parallax_background.tscn" id="3_ths3y"]
-[ext_resource type="Texture2D" uid="uid://64gsleg3gbk4" path="res://Effects/MainMenu/TvEffect/ShadowFigure.png" id="4_88np2"]
-[ext_resource type="Texture2D" uid="uid://cnb78wltq76ha" path="res://Effects/MainMenu/TvEffect/TV_effect2.png" id="26_a1e32"]
+[ext_resource type="Texture2D" uid="uid://cnb78wltq76ha" path="res://Effects/MainMenu/TvEffect/TV_effect2.png" id="1_5f7jd"]
+[ext_resource type="Texture2D" uid="uid://64gsleg3gbk4" path="res://Effects/MainMenu/TvEffect/ShadowFigure.png" id="2_c4wqf"]
 
 [sub_resource type="Animation" id="Animation_spiox"]
 resource_name = "DeathAnim"
@@ -38,7 +36,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Figures:position")
+tracks/0/path = NodePath("DeathTransition/Figures:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,79 +52,63 @@ _data = {
 "StartAnim": SubResource("Animation_yloox")
 }
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_minff")
-
-[node name="Play" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 224.0
-offset_right = 704.0
-offset_bottom = 288.0
-tooltip_text = "You are taking your own risk."
-text = "Play"
-
-[node name="Quit" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 320.0
-offset_right = 704.0
-offset_bottom = 384.0
-tooltip_text = "You are  making a good decition."
-text = "Quit
-"
+[node name="DeathTransition" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 616.0
+offset_bottom = 364.0
 
 [node name="TvEffect2" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
 scale = Vector2(36, 36)
-texture = ExtResource("26_a1e32")
+texture = ExtResource("1_5f7jd")
 
 [node name="Figures" type="Node2D" parent="."]
+position = Vector2(-576, -324)
 
 [node name="ShadowFigure" type="Sprite2D" parent="Figures"]
 position = Vector2(200, 464)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure2" type="Sprite2D" parent="Figures"]
 position = Vector2(424, 552)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure3" type="Sprite2D" parent="Figures"]
 position = Vector2(952, 448)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure4" type="Sprite2D" parent="Figures"]
 position = Vector2(776, 512)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure5" type="Sprite2D" parent="Figures"]
 position = Vector2(576, 552)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure6" type="Sprite2D" parent="Figures"]
 position = Vector2(56, 424)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure7" type="Sprite2D" parent="Figures"]
 position = Vector2(320, 432)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
+texture = ExtResource("2_c4wqf")
 
 [node name="ShadowFigure8" type="Sprite2D" parent="Figures"]
 position = Vector2(848, 400)
 scale = Vector2(8.0625, 6.75)
-texture = ExtResource("4_88np2")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("3_ths3y")]
+texture = ExtResource("2_c4wqf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_5m771")
 }
-
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

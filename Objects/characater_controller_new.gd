@@ -47,9 +47,17 @@ func _physics_process(delta):
 				print("I collided with ", collision.get_collider().name)
 				death_collision_check = true
 				is_death = true
+				velocity.x = 0
+				velocity.y = 0
 				get_hit()
 			elif collision.get_collider() is RigidBody2D:
 				collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
+			elif collision.get_collider().name == "TeleportCity":
+				if Input.is_action_just_pressed("JUMP"):
+					get_tree().change_scene_to_file("res://GameScenes/Level_City.tscn")
+			elif collision.get_collider().name == "TeleportForest":
+				if Input.is_action_just_pressed("JUMP"):
+					get_tree().change_scene_to_file("res://GameScenes/Level_Forest.tscn")
 
 		var left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 		if left_ledge:
@@ -97,6 +105,7 @@ func apply_central_impulse(vector):
 	velocity.y = vector.y
 
 func get_hit() -> void:
+	AudioManager.play_audio("LAUGHING")
 	death_timer.start(randf_range(1.5,2.5))
 	AudioManager.play_audio("DEATH")
 	var tween = create_tween().set_loops(4)
@@ -106,7 +115,3 @@ func get_hit() -> void:
 
 func _on_death_timer_timeout():
 	get_tree().reload_current_scene()
-
-
-
-

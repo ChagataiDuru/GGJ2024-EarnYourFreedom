@@ -1,5 +1,10 @@
 extends Node2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+func _ready():
+	animation_player.play("StartAnim")
+
 func _on_quit_pressed():
 	get_tree().quit()
 

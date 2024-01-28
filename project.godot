@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJam"
-run/main_scene="res://GameScenes/Level_City.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 AudioManager="*res://Globals/AudioManager.gd"
 SignalManager="*res://Globals/SignalManager.gd"
 SoundTrack="*res://Effects/sound_track.tscn"
+
+[display]
+
+window/size/mode=4
 
 [input]
 
