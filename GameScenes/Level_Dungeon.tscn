@@ -122,7 +122,7 @@ flip_h = true
 script = ExtResource("9_r3q7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(168, 392)
+position = Vector2(160, 368)
 shape = SubResource("RectangleShape2D_tfiy5")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

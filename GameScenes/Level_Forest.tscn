@@ -868,7 +868,7 @@ position = Vector2(905, 343)
 position = Vector2(1108, 435)
 
 [node name="SpawnPoint" type="Sprite2D" parent="."]
-position = Vector2(1664, 376)
+position = Vector2(80, 416)
 texture = ExtResource("7_7aijg")
 
 [node name="Spike4" parent="." instance=ExtResource("4_ulnwv")]
