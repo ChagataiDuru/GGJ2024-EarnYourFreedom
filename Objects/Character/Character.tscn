@@ -1,6 +1,6 @@
 [gd_scene load_steps=135 format=3 uid="uid://bk0el5j3fgts6"]
 
-[ext_resource type="Script" path="res://Objects/characater_controller_new.gd" id="1_vm0i1"]
+[ext_resource type="Script" path="res://Objects/characater_controller_new.gd" id="1_hmp62"]
 [ext_resource type="Texture2D" uid="uid://bex1v0ujpjucb" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_0.png" id="2_q4drb"]
 [ext_resource type="Texture2D" uid="uid://obw4kn6icl6" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_1.png" id="3_g4ig2"]
 [ext_resource type="Texture2D" uid="uid://dljk56fatxbhe" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_2.png" id="4_ibg8p"]
@@ -101,7 +101,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ndd7oqmcxyo" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_walk_6.png" id="99_fcjgx"]
 [ext_resource type="Texture2D" uid="uid://bs5v0ktrne3ms" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_walk_7.png" id="100_b2ilv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tqafl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhtxo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -475,9 +475,6 @@ animations = [{
 "name": &"walk",
 "speed": 12.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnlp5"]
-radius = 7.0
 
 [sub_resource type="Animation" id="Animation_ve3sh"]
 length = 0.833333
@@ -915,31 +912,31 @@ _data = {
 "walk": SubResource("Animation_aru3h")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ie2eb"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_11vct"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tdmre"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c38ia"]
 animation = &"run"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_saf5l"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hssxe"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4c6r1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ul208"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0dj6l"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i12vf"]
 animation = &"run"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ag4fy"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ie2eb")
+blend_point_0/node = SubResource("AnimationNodeAnimation_11vct")
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_tdmre")
+blend_point_1/node = SubResource("AnimationNodeAnimation_c38ia")
 blend_point_1/pos = 1.0
-blend_point_2/node = SubResource("AnimationNodeAnimation_saf5l")
+blend_point_2/node = SubResource("AnimationNodeAnimation_hssxe")
 blend_point_2/pos = 0.5
-blend_point_3/node = SubResource("AnimationNodeAnimation_4c6r1")
+blend_point_3/node = SubResource("AnimationNodeAnimation_ul208")
 blend_point_3/pos = -0.5
-blend_point_4/node = SubResource("AnimationNodeAnimation_0dj6l")
+blend_point_4/node = SubResource("AnimationNodeAnimation_i12vf")
 blend_point_4/pos = -1.0
 value_label = "Horizontal Velocity"
 blend_mode = 1
@@ -968,37 +965,34 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_216yo"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6fd0j"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u4o20"]
 states/HorizontalMovement/node = SubResource("AnimationNodeBlendSpace1D_ag4fy")
 states/HorizontalMovement/position = Vector2(406, 93)
 states/Start/position = Vector2(175, 93)
 states/fall/node = SubResource("AnimationNodeAnimation_cmebs")
-states/fall/position = Vector2(406, -14.75)
+states/fall/position = Vector2(406, -15)
 states/jump/node = SubResource("AnimationNodeAnimation_6jpt7")
-states/jump/position = Vector2(258, -14.8125)
+states/jump/position = Vector2(258, -15)
 states/land/node = SubResource("AnimationNodeAnimation_e4yfj")
 states/land/position = Vector2(547, -15)
 transitions = ["Start", "HorizontalMovement", SubResource("AnimationNodeStateMachineTransition_tj5j0"), "HorizontalMovement", "jump", SubResource("AnimationNodeStateMachineTransition_6s080"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0aopj"), "fall", "land", SubResource("AnimationNodeStateMachineTransition_vd74i"), "land", "HorizontalMovement", SubResource("AnimationNodeStateMachineTransition_6cg8u"), "HorizontalMovement", "fall", SubResource("AnimationNodeStateMachineTransition_216yo")]
-graph_offset = Vector2(-145, -78)
+graph_offset = Vector2(-25, -34)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnlp5"]
+radius = 7.0
 
 [node name="MainCharacter" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 7
-script = ExtResource("1_vm0i1")
+script = ExtResource("1_hmp62")
 jump_velocity = -400.0
+air_resistance = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
-sprite_frames = SubResource("SpriteFrames_tqafl")
+sprite_frames = SubResource("SpriteFrames_bhtxo")
 animation = &"walk"
-frame = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_dnlp5")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1009,9 +1003,16 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_y53kg")
 }
-tree_root = SubResource("AnimationNodeStateMachine_6fd0j")
+tree_root = SubResource("AnimationNodeStateMachine_u4o20")
 anim_player = NodePath("../AnimationPlayer")
 parameters/HorizontalMovement/blend_position = -0.698444
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_dnlp5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.05

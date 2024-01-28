@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmtb7wi462vw"]
+[gd_scene load_steps=17 format=3 uid="uid://cmtb7wi462vw"]
 
 [ext_resource type="Script" path="res://GameScenes/Level_Dungeon.gd" id="1_5sy4f"]
 [ext_resource type="PackedScene" uid="uid://c7hiotaaxdb56" path="res://BackGroundD.tscn" id="1_i413d"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="5_rq42a"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="6_jirje"]
 [ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_xq4sq"]
+[ext_resource type="PackedScene" uid="uid://cwlpejaerb5f4" path="res://Objects/Character/MainCharacter_scene.tscn" id="9_k8jeg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlm47"]
 size = Vector2(130, 538)
@@ -92,6 +93,10 @@ layer_0/tile_data = PackedInt32Array(2621468, 0, 0, 2621469, 0, 0, 2621474, 0, 0
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_rq42a")]
 position = Vector2(96, 392)
+
+[node name="MainCharacter2" parent="." instance=ExtResource("9_k8jeg")]
+position = Vector2(120, 192)
+jump_velocity = -380.0
 
 [node name="Ballon" parent="." instance=ExtResource("6_jirje")]
 position = Vector2(1000, 424)

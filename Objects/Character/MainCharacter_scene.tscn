@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://m0d7k2v7ax3m"]
+[gd_scene load_steps=139 format=3 uid="uid://cwlpejaerb5f4"]
 
 [ext_resource type="Script" path="res://Objects/Character/Scripts/characater_controller.gd" id="1_0b1on"]
 [ext_resource type="Texture2D" uid="uid://bex1v0ujpjucb" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_0.png" id="2_7u500"]
@@ -919,31 +919,31 @@ _data = {
 "walk": SubResource("Animation_aru3h")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jag0o"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_11vct"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lya2p"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c38ia"]
 animation = &"run"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_30jw8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hssxe"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lg3u5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ul208"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dxa8h"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i12vf"]
 animation = &"run"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ag4fy"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_jag0o")
+blend_point_0/node = SubResource("AnimationNodeAnimation_11vct")
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_lya2p")
+blend_point_1/node = SubResource("AnimationNodeAnimation_c38ia")
 blend_point_1/pos = 1.0
-blend_point_2/node = SubResource("AnimationNodeAnimation_30jw8")
+blend_point_2/node = SubResource("AnimationNodeAnimation_hssxe")
 blend_point_2/pos = 0.5
-blend_point_3/node = SubResource("AnimationNodeAnimation_lg3u5")
+blend_point_3/node = SubResource("AnimationNodeAnimation_ul208")
 blend_point_3/pos = -0.5
-blend_point_4/node = SubResource("AnimationNodeAnimation_dxa8h")
+blend_point_4/node = SubResource("AnimationNodeAnimation_i12vf")
 blend_point_4/pos = -1.0
 value_label = "Horizontal Velocity"
 blend_mode = 1
@@ -994,7 +994,7 @@ script = ExtResource("1_0b1on")
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_m2af2")
 animation = &"walk"
-frame = 4
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

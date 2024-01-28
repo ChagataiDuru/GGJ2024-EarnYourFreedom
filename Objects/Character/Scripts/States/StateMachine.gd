@@ -28,9 +28,6 @@ func _physics_process(delta):
 	
 func check_can_move():
 	return current_state.can_move
-
-
-	
 func _input(event:InputEvent):
 	current_state.handle_input(event)
 	
