@@ -8,12 +8,11 @@ func _ready():
 	setup()
 	
 func _physics_process(delta):
-	apply_gravity(delta)
+	if not is_on_floor(): 
+		velocity.y += gravity * gravity_scale * delta
 	move_and_slide()
 
 func setup(pos = Vector2(0,0)):
 	self.global_position = pos
 
-func apply_gravity(delta):
-	if not is_on_floor(): 
-		velocity.y += gravity * gravity_scale * delta
+
