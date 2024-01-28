@@ -1,6 +1,6 @@
 [gd_scene load_steps=135 format=3 uid="uid://bk0el5j3fgts6"]
 
-[ext_resource type="Script" path="res://Objects/Character/Scripts/characater_controller.gd" id="1_c8r2f"]
+[ext_resource type="Script" path="res://Objects/characater_controller_new.gd" id="1_vm0i1"]
 [ext_resource type="Texture2D" uid="uid://bex1v0ujpjucb" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_0.png" id="2_q4drb"]
 [ext_resource type="Texture2D" uid="uid://obw4kn6icl6" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_1.png" id="3_g4ig2"]
 [ext_resource type="Texture2D" uid="uid://dljk56fatxbhe" path="res://Objects/Character/Sprites/Character/No Clothes/Character1M_4_climb_2.png" id="4_ibg8p"]
@@ -984,14 +984,13 @@ graph_offset = Vector2(-145, -78)
 [node name="MainCharacter" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 7
-script = ExtResource("1_c8r2f")
+script = ExtResource("1_vm0i1")
 jump_velocity = -400.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.089, 1)
 sprite_frames = SubResource("SpriteFrames_tqafl")
 animation = &"walk"
-frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

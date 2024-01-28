@@ -8,7 +8,7 @@ var is_emitted : bool = false
 var is_falling: bool = false
 func state_process(delta):
 	if(character.velocity.y > 0 && !is_falling):
-		playback.travel("land")  
+		playback.travel("fall")  
 		is_falling =true
 		
 	if(character.is_on_floor() && !is_emitted):

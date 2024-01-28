@@ -15,11 +15,12 @@ func _ready():
 		if(child is State):
 			# TODO set up states
 			child.character = character
-			#child.playback= animation_tree["parameters/playback"]
+			child.playback= animation_tree["parameters/playback"]
 			states.append(child)
 			
 		else:
 			push_warning("Child " + child.name  + " is not a State.")
+	
 			
 
 func _physics_process(delta):
@@ -27,6 +28,8 @@ func _physics_process(delta):
 	
 func check_can_move():
 	return current_state.can_move
+
+
 	
 func _input(event:InputEvent):
 	current_state.handle_input(event)
