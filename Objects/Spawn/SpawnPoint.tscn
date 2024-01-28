@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://r04euhhgfaa4"]
 
-[ext_resource type="Texture2D" uid="uid://cgqgmjbocqrny" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/bush.png" id="1_4xx6e"]
+[ext_resource type="Texture2D" uid="uid://0shfsnctvcvj" path="res://ExternalSources/Sunny-land-files/Graphical Assets/environment/Props/bush.png" id="1_4xx6e"]
 [ext_resource type="Script" path="res://Objects/Spawn/LevelSpawn.gd" id="1_lpdsn"]
 
 [node name="SpawnPoint" type="Node2D"]
