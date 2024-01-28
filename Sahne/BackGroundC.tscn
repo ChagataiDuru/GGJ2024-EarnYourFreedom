@@ -151,6 +151,7 @@ sources/0 = SubResource("TileSetAtlasSource_rdkye")
 [node name="ParallaxBackgroundCity" type="ParallaxBackground"]
 
 [node name="Sky" type="ParallaxLayer" parent="."]
+position = Vector2(0, -150)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Back" type="Sprite2D" parent="Sky"]
