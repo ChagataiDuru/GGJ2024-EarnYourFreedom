@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmtb7wi462vw"]
+[gd_scene load_steps=16 format=3 uid="uid://cmtb7wi462vw"]
 
+[ext_resource type="Script" path="res://GameScenes/Level_Dungeon.gd" id="1_5sy4f"]
 [ext_resource type="PackedScene" uid="uid://c7hiotaaxdb56" path="res://BackGroundD.tscn" id="1_i413d"]
 [ext_resource type="Texture2D" uid="uid://bq0mt75mfyhps" path="res://ExternalSources/bulkhead-walls-files/Dungeon Tile_Set/Dungeon_Tile_Set.png" id="2_qfosd"]
 [ext_resource type="Texture2D" uid="uid://bb82qq62w70wi" path="res://ExternalSources/bulkhead-walls-files/Dungeon Tile_Set/Filler_Tile_Dungeon.png" id="3_q4vxg"]
 [ext_resource type="Texture2D" uid="uid://cbjabyrhpflml" path="res://ExternalSources/16-bit-spike-Sheet.png" id="4_euluf"]
 [ext_resource type="PackedScene" uid="uid://bk0el5j3fgts6" path="res://Objects/Character/Character.tscn" id="5_rq42a"]
 [ext_resource type="PackedScene" uid="uid://b6y3s3qryb72t" path="res://Objects/Ballon/Ballon.tscn" id="6_jirje"]
+[ext_resource type="Texture2D" uid="uid://boqcdwgae00vu" path="res://ExternalSources/DungeonDoor.png" id="8_xq4sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlm47"]
 size = Vector2(130, 538)
@@ -60,6 +62,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_wxj3p")
 
 [node name="Level_Dungeon" type="Node2D"]
+script = ExtResource("1_5sy4f")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_i413d")]
 
@@ -88,16 +91,26 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2621468, 0, 0, 2621469, 0, 0, 2621474, 0, 0, 2621475, 0, 0, 2621476, 0, 0, 2621496, 0, 0, 2621497, 0, 0, 2621498, 0, 0, 2621499, 0, 0, 2752582, 0, 0, 2752583, 0, 0, 2752584, 0, 0, 2752585, 0, 0, 2752592, 0, 0, 2752593, 0, 0, 2752594, 0, 0, 2752595, 0, 0, 2752596, 0, 0, 2752597, 0, 0, 2818140, 0, 0, 2818141, 0, 0, 2818142, 0, 0, 2818143, 0, 0, 2818135, 0, 0, 2818136, 0, 0, 2818137, 0, 0, 2818138, 0, 0, 2818139, 0, 0, 2752598, 0, 0, 2752586, 0, 0, 2752587, 0, 0, 2752588, 0, 0, 2752589, 0, 0, 2752590, 0, 0, 2752591, 0, 0, 2752573, 0, 0, 2752574, 0, 0, 2752575, 0, 0, 2752576, 0, 0, 2752577, 0, 0, 2752578, 0, 0, 2752579, 0, 0, 2752580, 0, 0, 2752581, 0, 0, 2621500, 0, 0, 2687037, 0, 1342177280, 2424927, 0, 1610612736, 2490463, 0, 1610612736, 2555999, 0, 1610612736, 2621535, 0, 1610612736, 2687071, 0, 1610612736, 2752607, 0, 1610612736, 1900600, 0, 1342177280, 1966136, 0, 1342177280, 2031672, 0, 1342177280, 2097208, 0, 1342177280, 2162744, 0, 1342177280, 2228280, 0, 1342177280, 2293816, 0, 1342177280, 2359352, 0, 1342177280, 2424888, 0, 1342177280, 2490424, 0, 1342177280, 2555960, 0, 1342177280)
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_rq42a")]
-position = Vector2(160, 368)
+position = Vector2(96, 392)
 
 [node name="Ballon" parent="." instance=ExtResource("6_jirje")]
-position = Vector2(968, 416)
+position = Vector2(1000, 424)
 
 [node name="Ballon2" parent="." instance=ExtResource("6_jirje")]
-position = Vector2(1104, 456)
+position = Vector2(1104, 448)
 
 [node name="Ballon3" parent="." instance=ExtResource("6_jirje")]
-position = Vector2(1272, 464)
+position = Vector2(1208, 464)
 
 [node name="Ballon4" parent="." instance=ExtResource("6_jirje")]
-position = Vector2(1416, 464)
+position = Vector2(1328, 472)
+
+[node name="Ballon5" parent="." instance=ExtResource("6_jirje")]
+position = Vector2(1440, 464)
+
+[node name="SpawnPoint" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(64, 392)
+scale = Vector2(0.944444, 1)
+texture = ExtResource("8_xq4sq")
+flip_h = true
