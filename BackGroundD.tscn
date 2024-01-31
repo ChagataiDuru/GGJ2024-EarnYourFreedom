@@ -8,6 +8,6 @@
 motion_mirroring = Vector2(1072, 0)
 
 [node name="Bulkhead-wallsx3" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(536, 541)
-scale = Vector2(3.04545, 4.8125)
+position = Vector2(536, 325)
+scale = Vector2(3.04545, 2.88393)
 texture = ExtResource("1_4evkh")
